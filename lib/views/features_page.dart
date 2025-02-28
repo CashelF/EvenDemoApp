@@ -1,8 +1,8 @@
-// ignore_for_file: library_private_types_in_public_api
-
+// lib/views/features_page.dart
 import 'package:demo_ai_even/views/features/bmp_page.dart';
 import 'package:demo_ai_even/views/features/notification/notification_page.dart';
 import 'package:demo_ai_even/views/features/text_page.dart';
+import 'package:demo_ai_even/views/features/video_page.dart'; // Import the new VideoPage.
 import 'package:flutter/material.dart';
 
 class FeaturesPage extends StatefulWidget {
@@ -67,8 +67,7 @@ class _FeaturesPageState extends State<FeaturesPage> {
                 onTap: () async {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(
-                        builder: (context) => const TextPage()),
+                    MaterialPageRoute(builder: (context) => const TextPage()),
                   );
                 },
                 child: Container(
@@ -81,6 +80,28 @@ class _FeaturesPageState extends State<FeaturesPage> {
                   margin: const EdgeInsets.only(top: 16),
                   child: const Text(
                     "Text",
+                    style: TextStyle(fontSize: 16),
+                  ),
+                ),
+              ),
+              // New button for navigating to VideoPage.
+              GestureDetector(
+                onTap: () async {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const VideoPage()),
+                  );
+                },
+                child: Container(
+                  height: 60,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(5),
+                  ),
+                  alignment: Alignment.center,
+                  margin: const EdgeInsets.only(top: 16),
+                  child: const Text(
+                    "Video",
                     style: TextStyle(fontSize: 16),
                   ),
                 ),
